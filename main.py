@@ -1,6 +1,9 @@
 import telebot
+from telebot import apihelper
 
-TOKEN = ''
+
+apihelper.proxy = {'https': 'socks5h://382210467:yJD0LQSj@orbtl.s5.opennetwork.cc:999'}
+TOKEN = '962277580:AAHqrpwBy1QACi6u2UyidHi18ushebnqyxw'
 
 bot = telebot.TeleBot(TOKEN)
 
@@ -18,8 +21,7 @@ def get_text_messages(message):
 		bot.reply_to(message, 'Опять грустим?')
 		dict_of_sadness.setdefault(user_id, 0)
 		dict_of_sadness[user_id] += num
-		if str(dict_of_sadness[user_id])[-1] in \
-				['0', '1', '5', '6', '7', '8', '9']\
+		if str(dict_of_sadness[user_id])[-1] in ['0', '1', '5', '6', '7', '8', '9']\
 				or str(dict_of_sadness[user_id])[-2:] in ['12', '13', '14']:
 			word = 'раз'
 		else:
