@@ -18,9 +18,9 @@ def get_text_messages(message):
 		bot.reply_to(message, 'Опять грустим?')
 		dict_of_sadness.setdefault(user_id, 0)
 		dict_of_sadness[user_id] += num
-		if str(dict_of_sadness[user_id])[len(str(dict_of_sadness[user_id])) - 2:] in \
-				['1', '5', '6', '7', '8', '9', '11', '12', '13', '14', '15', '16', '17', '18', '19']\
-				or str(dict_of_sadness[user_id])[-1] == '0':
+		if str(dict_of_sadness[user_id])[-1] in \
+				['0', '1', '5', '6', '7', '8', '9']\
+				or str(dict_of_sadness[user_id])[-2:] in ['12', '13', '14']:
 			word = 'раз'
 		else:
 			word = 'раза'
